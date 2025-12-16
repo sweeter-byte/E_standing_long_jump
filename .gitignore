@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Big files
+data/**/*.mp4
+data/**/*.avi
+data/**/*.mov
+data/**/*.zip
+data/**/*.rar
+
+output/results/*.csv
+output/figures/*.png
+
+# log
+*.log
+
+# enviroment configuration
+.env
