@@ -40,3 +40,10 @@ output/figures/*.png
 
 # enviroment configuration
 .env
+
+# LaTex
+paper/*.py 
+*.aux
+*.out
+*.pdf
+*.toc
