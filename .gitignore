@@ -31,9 +31,12 @@ data/**/*.avi
 data/**/*.mov
 data/**/*.zip
 data/**/*.rar
+data/**/*.xlsx
+data/**/*.txt
+data/**/*.jpg
+notebooks/output/
 
-output/results/*.csv
-output/figures/*.png
+output/
 
 # log
 *.log
