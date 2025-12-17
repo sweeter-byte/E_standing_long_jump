@@ -1,0 +1,310 @@
+\documentclass[12pt]{article}
+
+% 基础包
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{setspace}
+
+% 页面设置
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm
+}
+
+% 页眉页脚 
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Team \#12345}  % 替换为队伍编号
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% 超链接设置
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=blue
+}
+
+% 代码高亮设置
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{orange},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    breaklines=true,
+    captionpos=b
+}
+
+% 标题信息
+\title{
+    \vspace{-2cm}
+    \textbf{AI-Assisted Intelligent Physical Fitness Testing:\\
+    Standing Long Jump Performance Analysis and Prediction}
+}
+\author{Team \#12345}
+\date{\today}
+
+% 正文开始
+\begin{document}
+
+% 摘要页
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\LARGE\textbf{AI-Assisted Intelligent Physical Fitness Testing}\par}
+    \vspace{0.5cm}
+    {\Large Standing Long Jump Performance Analysis and Prediction\par}
+    
+    \vspace{2cm}
+    
+    {\large\textbf{Summary}\par}
+    \vspace{0.5cm}
+    
+    \begin{abstract}
+        \noindent
+        % 摘要内容（300-400词为宜）
+        This paper addresses the problem of analyzing and predicting standing long jump performance using AI-based human pose estimation data. 
+        
+        \textbf{For Problem 1}, we developed a phase detection algorithm based on the vertical velocity of key body joints (ankles and center of mass) to identify the takeoff and landing moments. The flight phase kinematics were characterized using...
+        
+        \textbf{For Problem 2}, we extracted biomechanical features including joint angles, angular velocities, and body posture metrics. Using correlation analysis and multiple regression models, we identified that...
+        
+        \textbf{For Problem 3}, based on the regression model established in Problem 2, we predicted the jumping distance of Athlete 11 to be...
+        
+        \textbf{For Problem 4}, we provided specific training recommendations by comparing the athlete's posture with optimal patterns...
+        
+        \vspace{0.5cm}
+        \textbf{Keywords:} Human Pose Estimation; Standing Long Jump; Biomechanical Analysis; Regression Model; Motion Phase Detection
+    \end{abstract}
+    
+    \vfill
+\end{titlepage}
+
+% 目录 
+\tableofcontents
+\newpage
+
+% 正文
+\section{Introduction}
+
+\subsection{Background}
+The standing long jump is a fundamental physical fitness test that evaluates an individual's lower limb explosive power and coordination. With the advancement of AI-based human pose estimation technology, it has become possible to capture and analyze athletes' movements in real-time through video recording...
+
+\subsection{Problem Restatement}
+Based on the given data, we are required to:
+\begin{enumerate}[label=(\arabic*)]
+    \item Identify the takeoff and landing moments, and describe the flight phase motion.
+    \item Analyze the main factors affecting jumping performance.
+    \item Predict the jumping distance of Athlete 11.
+    \item Provide training recommendations for performance improvement.
+\end{enumerate}
+
+\subsection{Our Approach}
+We propose a comprehensive analytical framework that combines...
+
+
+\section{Assumptions and Justifications}
+
+\begin{enumerate}[label=\textbf{A\arabic*.}]
+    \item \textbf{Camera position is fixed.} The camera does not move during recording, ensuring consistent coordinate reference.
+    
+    \item \textbf{Pose estimation accuracy is sufficient.} The 33 keypoint coordinates provided by the AI system accurately represent the actual body positions.
+    
+    \item \textbf{Air resistance is negligible.} Given the short flight duration and relatively low speed, air resistance effects are minimal.
+\end{enumerate}
+
+
+\section{Notations}
+
+\begin{table}[H]
+    \centering
+    \caption{Notations used in this paper}
+    \begin{tabular}{cl}
+        \toprule
+        \textbf{Symbol} & \textbf{Description} \\
+        \midrule
+        $t$ & Time (frame index) \\
+        $\mathbf{p}_i(t)$ & Position of keypoint $i$ at time $t$ \\
+        $v_y(t)$ & Vertical velocity at time $t$ \\
+        $\theta_{knee}$ & Knee joint angle \\
+        $\theta_{hip}$ & Hip joint angle \\
+        $D$ & Jumping distance \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\section{Problem 1: Phase Detection and Motion Analysis}
+
+\subsection{Data Preprocessing}
+The raw coordinate data contains 33 keypoints per frame. We first applied a Savitzky-Golay filter to smooth the trajectories...
+
+\subsection{Takeoff and Landing Detection Algorithm}
+We define the takeoff moment as the instant when both feet leave the ground, characterized by...
+
+The detection algorithm is formalized as:
+\begin{equation}
+    t_{takeoff} = \min\{t : v_y^{ankle}(t) > \epsilon \text{ and } p_y^{ankle}(t) > p_y^{ankle}(t-1) + \delta\}
+\end{equation}
+
+\subsection{Flight Phase Kinematics}
+During the flight phase, the center of mass follows a parabolic trajectory:
+\begin{equation}
+    y(t) = y_0 + v_{y0}t - \frac{1}{2}gt^2
+\end{equation}
+
+\subsection{Results}
+% 插入图片示例
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/phase_detection.png}
+    \caption{Phase detection results for Athlete 1}
+    \label{fig:phase}
+\end{figure}
+
+
+\section{Problem 2: Factor Analysis}
+
+\subsection{Feature Extraction}
+We extracted the following biomechanical features from the pose data:
+
+\begin{table}[H]
+    \centering
+    \caption{Extracted features and their descriptions}
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Category} & \textbf{Feature} & \textbf{Description} \\
+        \midrule
+        Angle & $\theta_{knee}^{takeoff}$ & Knee angle at takeoff \\
+        Angle & $\theta_{hip}^{takeoff}$ & Hip angle at takeoff \\
+        Velocity & $v_{CoM}^{takeoff}$ & Center of mass velocity at takeoff \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Correlation Analysis}
+% 相关性分析结果
+
+\subsection{Regression Model}
+We established a multiple linear regression model:
+\begin{equation}
+    D = \beta_0 + \beta_1 \theta_{knee} + \beta_2 v_{CoM} + \beta_3 \cdot BMI + \epsilon
+\end{equation}
+
+
+\section{Problem 3: Performance Prediction}
+
+Based on the model established in Problem 2...
+
+
+\section{Problem 4: Training Recommendations}
+
+\subsection{Posture Comparison}
+By comparing Athlete 11's motion patterns with the optimal patterns observed from high-performing athletes...
+
+\subsection{Specific Recommendations}
+\begin{enumerate}
+    \item \textbf{Arm Swing Enhancement}: ...
+    \item \textbf{Takeoff Angle Optimization}: ...
+    \item \textbf{Landing Posture Improvement}: ...
+\end{enumerate}
+
+\subsection{Predicted Improvement}
+After implementing the recommended training...
+
+
+\section{Model Evaluation}
+
+\subsection{Sensitivity Analysis}
+To evaluate the robustness of our model...
+
+\subsection{Strengths and Weaknesses}
+
+\textbf{Strengths:}
+\begin{itemize}
+    \item Comprehensive biomechanical feature extraction
+    \item Robust phase detection algorithm
+    \item Interpretable regression model
+\end{itemize}
+
+\textbf{Weaknesses:}
+\begin{itemize}
+    \item Limited sample size for training
+    \item 2D coordinate limitations
+\end{itemize}
+
+
+\section{Conclusion}
+
+In this paper, we developed a comprehensive framework for analyzing standing long jump performance...
+
+
+% 参考文献
+\newpage
+\begin{thebibliography}{99}
+    \bibitem{ref1} Author A, Author B. Title of the paper. \textit{Journal Name}, 2023, 10(2): 100-110.
+    \bibitem{ref2} Author C. Human Pose Estimation: A Survey. \textit{IEEE Trans. PAMI}, 2022.
+\end{thebibliography}
+
+
+% 附录
+\newpage
+\appendix
+\section{Code Listings}
+
+\begin{lstlisting}[language=Python, caption=Phase Detection Algorithm]
+import numpy as np
+from scipy.signal import savgol_filter
+
+def detect_phases(keypoints, fps=30):
+    """
+    Detect takeoff and landing phases from keypoint data.
+    
+    Parameters:
+        keypoints: ndarray of shape (n_frames, 33, 2)
+        fps: frames per second
+    
+    Returns:
+        takeoff_frame, landing_frame
+    """
+    # Extract ankle positions (keypoints 27, 28)
+    ankle_y = (keypoints[:, 27, 1] + keypoints[:, 28, 1]) / 2
+    
+    # Smooth the trajectory
+    ankle_y_smooth = savgol_filter(ankle_y, 11, 3)
+    
+    # Calculate velocity
+    velocity = np.gradient(ankle_y_smooth) * fps
+    
+    # Detect takeoff and landing
+    # ... implementation details
+    
+    return takeoff_frame, landing_frame
+\end{lstlisting}
+
+\end{document}
