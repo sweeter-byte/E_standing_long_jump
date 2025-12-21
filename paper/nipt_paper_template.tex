@@ -1,0 +1,1205 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{amsmath, amssymb, amsthm}      % Mathematical formulas
+\usepackage{graphicx}                       % Image insertion
+\usepackage{booktabs}                       % Professional tables
+\usepackage{multirow}                       % Table cell merging
+\usepackage{geometry}                       % Page layout
+\usepackage{hyperref}                       % Hyperlinks
+\usepackage{float}                          % Float control
+\usepackage{subfigure}                      % Subfigures
+\usepackage{algorithm}                      % Algorithm environment
+\usepackage{algorithmic}                    % Algorithm pseudocode
+\usepackage{listings}                       % Code display
+\usepackage{xcolor}                         % Color support
+\usepackage{enumitem}                       % List customization
+\usepackage{fancyhdr}                       % Header and footer
+\usepackage{caption}                        % Figure/table captions
+\usepackage{appendix}                       % Appendix
+\usepackage{array}                          % Enhanced tables
+\usepackage{longtable}                      % Long tables
+\usepackage{cite}                           % Citations
+\usepackage{lastpage}                       % Last page reference
+
+% Page Layout 
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\setlength{\parskip}{0.5em}
+\linespread{1.3}
+
+% Code Style Settings
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    breaklines=true
+}
+
+% Theorem Environments
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{assumption}{Assumption}[section]
+
+%  Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\lhead{Team \# XXXXXX}
+
+\begin{document}
+
+
+% SUMMARY SHEET (摘要页)
+% 摘要页是论文的"门面"，评委可能只看这一页就决定初步印象
+% 【要点】
+%   1. 简洁有力地概括整个工作
+%   2. 每个问题用1-2句话说明方法和结论
+%   3. 突出创新点和关键结果
+%   4. 关键词选择要精准，体现论文特色
+%   5. 总字数控制在300-500词
+
+\begin{center}
+\begin{tabular}{|p{4cm}|p{4cm}|p{5cm}|}
+\hline
+\textbf{Problem Chosen} & \textbf{2025} & \textbf{Team Control Number} \\
+\textbf{C} & \textbf{MCM/ICM} & \textbf{XXXXXX} \\
+ & \textbf{Summary Sheet} & \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+
+\begin{center}
+\Large\textbf{Optimizing NIPT Detection Timing: A Multi-Factor Analysis \\
+Framework for Personalized Prenatal Screening}
+\end{center}
+
+%  标题要简洁有力，包含：研究对象(NIPT) + 核心方法(Multi-Factor) + 目标(Optimizing Timing)
+%  参考获奖论文标题格式：
+%   - "Uncovering the Hidden Momentum: A Data-Science Exploration of Tennis Match Dynamics"
+%   - 动词开头（Uncovering/Optimizing）+ 核心概念 + 方法描述
+
+\vspace{1em}
+
+% Summary正文写作要点：
+% 第一段：背景+问题重要性（2-3句）
+Non-invasive Prenatal Testing (NIPT) has revolutionized prenatal screening by analyzing cell-free fetal DNA (cffDNA) in maternal blood. However, determining the optimal detection timing based on individual characteristics remains a critical challenge that affects both test reliability and clinical efficiency. This study develops a comprehensive mathematical framework to address this challenge through data-driven modeling and optimization.
+
+% 第二段：整体方法论概述（说明建立了什么模型）
+This paper establishes two primary models: the \textbf{Multi-Factor Regression Model} for analyzing Y-chromosome concentration dynamics and the \textbf{BMI-Stratified Survival Analysis Model} for determining personalized detection timing.
+
+% 第三段：数据预处理概述
+Before model construction, we conducted comprehensive data preprocessing, including missing value imputation using the \textbf{K-Nearest Neighbors (KNN)} algorithm, outlier detection via the \textbf{Interquartile Range (IQR)} method, and feature engineering to construct interaction terms and derived variables.
+
+% 第四段：问题一的方法与结果
+For \textbf{Problem 1}, we established a \textbf{Multiple Linear Regression Model} with interaction terms to quantify the relationship between Y-chromosome concentration, gestational age, and BMI. Statistical analysis reveals significant correlations, achieving an $R^2$ of xxxxx with all coefficients statistically significant ($p < 0.05$).
+
+% 第五段：问题二的方法与结果
+For \textbf{Problem 2}, we developed a \textbf{Survival Analysis Framework} using Kaplan-Meier estimation and log-rank tests to determine BMI-stratified detection timing recommendations. Our optimization approach identifies the earliest gestational age achieving 95\% compliance probability for each BMI group, with recommended timing ranging from xx to xx weeks.
+
+% 第六段：问题三的方法与结果
+For \textbf{Problem 3}, we extended the analysis using \textbf{Cox Proportional Hazards Model} to incorporate multiple maternal factors including age, gravidity, and parity. Feature selection via LASSO regularization identifies xxxxx as significant predictors, enabling a personalized risk score system.
+
+% 第七段：问题四的方法与结果
+For \textbf{Problem 4}, we constructed a \textbf{Random Forest Classification Model} to detect chromosomal abnormalities in female fetuses based on Z-scores and maternal characteristics. The model achieves an AUC of xxxxx with sensitivity of xxxxx\% and specificity of xxxxx\%.
+
+% 第八段：验证与创新点
+Additionally, we performed extensive sensitivity analysis through Monte Carlo simulation to assess model robustness under measurement errors. Our framework demonstrates strong generalization performance across different population subgroups through 5-fold cross-validation.
+
+\vspace{1em}
+\textbf{Keywords:} NIPT, Cell-free Fetal DNA, Survival Analysis, BMI Stratification, Multiple Regression, Random Forest Classification
+
+% 关键词选择原则：
+%   1. 研究对象/领域：NIPT, Cell-free Fetal DNA
+%   2. 核心方法/模型：Survival Analysis, Multiple Regression, Random Forest
+%   3. 特色创新点：BMI Stratification
+%   4. 数量控制在5-7个
+
+\newpage
+
+% TABLE OF CONTENTS (目录)
+\tableofcontents
+\newpage
+
+% 1. INTRODUCTION (引言)
+% 引言是论文的"开场白"，需要完成以下任务：
+%   1. 吸引读者注意（可以用一个生动的开头）
+%   2. 说明问题的背景和重要性
+%   3. 清晰重述需要解决的问题
+%   4. 概述本文的工作和贡献
+% 获奖论文的开头方式：
+%   - 引用名人名言或比赛场景
+%   - 给出震撼性的统计数据
+%   - 描述一个具体的临床场景
+
+\section{Introduction}
+
+\subsection{Background}
+% 背景部分写作要点：
+%   1. 从宏观到微观：先讲产前筛查的重要性，再聚焦NIPT技术
+%   2. 引用具体数据增加说服力（如检出率、假阳性率等）
+%   3. 指出现有方法/指南的局限性
+%   4. 引出本研究要解决的核心问题
+%   5. 建议长度：3-4段
+
+% 可以用一个临床场景开头：
+% "Every year, millions of expectant mothers face a critical decision..."
+
+Non-invasive Prenatal Testing (NIPT) represents a significant advancement in prenatal care, offering expectant mothers a safer alternative to invasive procedures such as amniocentesis. By analyzing cell-free fetal DNA (cffDNA) circulating in maternal blood, NIPT can detect chromosomal abnormalities including trisomy 21 (Down syndrome), trisomy 18 (Edwards syndrome), and trisomy 13 (Patau syndrome) with high accuracy while eliminating the risk of miscarriage associated with invasive testing.
+
+% 这里可以加入具体统计数据：
+% "According to recent clinical studies, NIPT achieves detection rates exceeding 99% for Down syndrome
+% with false positive rates below 0.1%, significantly outperforming traditional serum screening methods."
+
+The concentration of cell-free fetal DNA in maternal plasma, particularly the Y-chromosome concentration for male fetuses, is influenced by multiple factors including gestational age and maternal body mass index (BMI). The Y-chromosome signal serves as a natural internal control for fetal fraction, as its presence confirms the detection of fetal DNA. Understanding the dynamics of Y-concentration is therefore crucial for optimizing NIPT timing and ensuring reliable test results.
+
+% 引出核心问题：现有指南的局限性
+
+However, current clinical guidelines typically recommend NIPT after 10 weeks of gestation without accounting for individual maternal variations. This one-size-fits-all approach may lead to suboptimal testing experiences: women with lower fetal fractions may receive inconclusive results requiring repeat testing, while those with higher fractions could potentially be tested earlier. This creates a clear need for personalized timing strategies that consider maternal characteristics to maximize detection accuracy while minimizing delays.
+
+% 最后一段说明本研究的目标
+
+This study aims to develop a comprehensive mathematical framework that addresses these challenges by: (1) quantifying the relationships between Y-concentration, gestational age, and maternal factors; (2) establishing BMI-stratified optimal testing times; (3) incorporating multiple factors for personalized recommendations; and (4) detecting chromosomal abnormalities in female fetuses where Y-concentration is not applicable.
+
+\subsection{Restatement of the Problem}
+% 问题重述要点：
+%   1. 用数学/分析语言重新表述原问题
+%   2. 分点列出，层次清晰
+%   3. 每个子问题明确：输入是什么、输出是什么、目标是什么
+%   4. 可以用bullet points或enumerate环境
+
+Through careful analysis of the problem background and requirements, we restate the four problems as follows:
+
+\begin{itemize}
+    \item \textbf{Problem 1: Correlation Analysis}
+    \begin{itemize}
+        \item[$\triangleright$] Establish the quantitative relationship between Y-chromosome concentration (for male fetuses), gestational age, and maternal BMI
+        \item[$\triangleright$] Determine statistical significance through hypothesis testing
+        \item[$\triangleright$] Provide clear visualization of correlation patterns
+        \item[$\triangleright$] \textit{Mathematical goal:} Find $Y = f(t, BMI)$ with significance assessment
+    \end{itemize}
+    
+    \item \textbf{Problem 2: BMI-Stratified Timing Optimization}
+    \begin{itemize}
+        \item[$\triangleright$] Develop an optimal BMI grouping strategy
+        \item[$\triangleright$] Determine the earliest reliable detection time for each BMI group
+        \item[$\triangleright$] Analyze the impact of measurement errors on recommendations
+        \item[$\triangleright$] \textit{Mathematical goal:} Find $T^*(BMI\_group)$ minimizing detection time while ensuring reliability
+    \end{itemize}
+    
+    \item \textbf{Problem 3: Multi-Factor Comprehensive Analysis}
+    \begin{itemize}
+        \item[$\triangleright$] Extend analysis to incorporate additional maternal factors (height, weight, age, gravidity, parity)
+        \item[$\triangleright$] Develop comprehensive grouping and timing strategy
+        \item[$\triangleright$] Quantify the contribution of each factor
+        \item[$\triangleright$] \textit{Mathematical goal:} Construct multi-factor model $T^* = g(BMI, Age, Gravidity, Parity, ...)$
+    \end{itemize}
+    
+    \item \textbf{Problem 4: Female Fetus Abnormality Detection}
+    \begin{itemize}
+        \item[$\triangleright$] Build a classification model for detecting chromosomal abnormalities in female fetuses
+        \item[$\triangleright$] Identify key indicators and establish detection rules
+        \item[$\triangleright$] Evaluate model performance with appropriate metrics
+        \item[$\triangleright$] \textit{Mathematical goal:} Construct classifier $\hat{y} = h(Z_{13}, Z_{18}, Z_{21}, Z_X, ...)$
+    \end{itemize}
+\end{itemize}
+
+\subsection{Our Work}
+% 工作概述要点：
+%   1. 按问题顺序简明扼要地列出解决方案
+%   2. 强调方法之间的逻辑递进关系
+%   3. 突出创新点
+%   4. 可以用numbered list
+%   5. 每个item控制在2-3句话
+
+In line with the problem requirements, our work encompasses the following aspects:
+
+\begin{enumerate}
+    \item \textbf{Data Preprocessing:} We performed comprehensive data cleaning including missing value imputation using KNN algorithm, outlier detection via IQR method, and gestational age format conversion. Feature engineering was conducted to construct interaction terms and derived variables.
+    
+    \item \textbf{Problem 1 - Correlation Analysis:} We established a multiple linear regression model with interaction terms: $Y = \beta_0 + \beta_1 t + \beta_2 BMI + \beta_3 (t \times BMI) + \epsilon$. Statistical tests including t-tests for individual coefficients and F-test for overall model significance were performed.
+    
+    \item \textbf{Problem 2 - BMI Stratification:} We developed a survival analysis framework treating "achieving 4\% Y-concentration" as the event of interest. Kaplan-Meier curves were constructed for different BMI groups, and optimal detection timing was determined using probability thresholds.
+    
+    \item \textbf{Problem 3 - Multi-Factor Analysis:} We extended the analysis using Cox proportional hazards model incorporating BMI, age, gravidity, and parity. LASSO regularization was applied for feature selection, and a personalized risk score system was developed.
+    
+    \item \textbf{Problem 4 - Abnormality Detection:} We constructed a Random Forest classification model using Z-scores (chr13, 18, 21, X) and maternal characteristics. Model evaluation included ROC analysis, confusion matrix, and threshold optimization for clinical application.
+    
+    \item \textbf{Validation and Sensitivity Analysis:} We validated all models through 5-fold cross-validation and performed Monte Carlo simulation to assess robustness under measurement errors.
+\end{enumerate}
+
+% 2. ASSUMPTIONS AND NOTATIONS (假设与符号说明)
+% 这一节非常重要，是建模的基础：
+%   1. 假设要合理、可辩护，不能太多（5-8条为宜）
+%   2. 每个假设后要简要说明理由
+%   3. 符号表要完整、一致，覆盖全文主要符号
+%   4. 可以分类列出符号（如输入变量、输出变量、参数等）
+
+\section{Assumptions and Notations}
+
+\subsection{Assumptions}
+% 每个假设要包含：
+%   1. 加粗的假设陈述
+%   2. 简要的理由说明
+%   3. 合理性论证（可引用文献或常识）
+
+\begin{itemize}
+    \item \textbf{The sequencing quality is consistent across all samples.} The data is collected from the same laboratory with standardized protocols, ensuring comparable sequencing quality across samples. This assumption is reasonable given that clinical laboratories follow strict quality control procedures.
+    
+    \item \textbf{The cffDNA concentration accurately reflects fetal fraction.} Cell-free fetal DNA in maternal plasma provides a reliable measure of fetal genetic material, as validated by numerous clinical studies. The Y-chromosome concentration specifically serves as a gold standard for fetal fraction in male pregnancies.
+    
+    \item \textbf{The 4\% Y-chromosome concentration threshold is clinically valid.} This threshold represents the minimum fetal fraction required for reliable NIPT results, as established in clinical guidelines and supported by validation studies showing high accuracy above this level.
+    
+    \item \textbf{Maternal factors affect cffDNA concentration through identifiable mechanisms.} While the biological pathways are complex, we assume that factors such as BMI, gestational age, and maternal age influence fetal fraction through quantifiable relationships that can be modeled statistically.
+    
+    \item \textbf{Measurement errors follow a normal distribution.} Random variations in Y-chromosome concentration measurements can be approximated by Gaussian noise, a standard assumption in analytical chemistry and clinical testing.
+    
+    \item \textbf{The sample population is representative of the target clinical population.} The dataset represents a typical prenatal screening population, allowing generalization of findings to similar clinical settings.
+\end{itemize}
+
+\subsection{Notations}
+% 符号表要点：
+%   1. 包含所有文中出现的重要符号
+%   2. 按类型分组（可选）
+%   3. 符号、单位、描述要完整
+
+\begin{table}[H]
+\centering
+\caption{Symbols and Descriptions}
+\begin{tabular}{c l l}
+\toprule
+\textbf{Symbol} & \textbf{Description} & \textbf{Unit} \\
+\midrule
+\multicolumn{3}{l}{\textit{Input Variables}} \\
+$t$ & Gestational age & days \\
+$B$ or $BMI$ & Body Mass Index & kg/m$^2$ \\
+$Age$ & Maternal age & years \\
+$G$ & Gravidity (number of pregnancies) & - \\
+$P$ & Parity (number of live births) & - \\
+\midrule
+\multicolumn{3}{l}{\textit{Output/Target Variables}} \\
+$Y$ & Y-chromosome concentration & \% \\
+$D(t)$ & Compliance function: $\mathbb{I}(Y \geq 4\%)$ & - \\
+$T^*$ & Optimal detection time & weeks \\
+$\hat{y}$ & Predicted abnormality label & 0/1 \\
+\midrule
+\multicolumn{3}{l}{\textit{Model Parameters}} \\
+$\beta_i$ & Regression coefficients & - \\
+$\epsilon$ & Random error term & - \\
+$h(t)$ & Hazard function & - \\
+$S(t)$ & Survival function & - \\
+$\lambda$ & Regularization parameter & - \\
+\midrule
+\multicolumn{3}{l}{\textit{Evaluation Metrics}} \\
+$R^2$ & Coefficient of determination & - \\
+$MSE$ & Mean Squared Error & - \\
+$AUC$ & Area Under ROC Curve & - \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% 3. DATA PREPROCESSING (数据预处理)
+% 数据预处理是建模的基础，这一节需要详细展示：
+%   1. 数据概览（样本量、特征数、数据类型）
+%   2. 数据清洗（缺失值、异常值处理）
+%   3. 数据转换（格式转换、标准化）
+%   4. 特征工程（派生特征、交互项）
+%   5. 变量选择（相关性分析、重要性排序）
+%   6. 每一步都要配合可视化图表说明
+
+\section{Data Preprocessing}
+
+\subsection{Data Overview}
+% 数据概览要点：
+%   1. 数据来源说明
+%   2. 样本规模（样本数、特征数）
+%   3. 主要变量说明及数据类型
+%   4. 建议用表格展示
+
+The dataset contains information from NIPT screening tests, including maternal characteristics, pregnancy information, and sequencing results. Table \ref{tab:data_overview} summarizes the key variables.
+
+\begin{table}[H]
+\centering
+\caption{Dataset Overview}
+\label{tab:data_overview}
+\begin{tabular}{l l c c l}
+\toprule
+\textbf{Variable} & \textbf{Type} & \textbf{Non-null Count} & \textbf{Missing \%} & \textbf{Range/Categories} \\
+\midrule
+Gestational Age & Categorical & xxxxx & xx\% & xx-xx weeks+days \\
+Height & Continuous & xxxxx & xx\% & xxx-xxx cm \\
+Weight & Continuous & xxxxx & xx\% & xx-xxx kg \\
+BMI & Continuous & xxxxx & xx\% & xx-xx kg/m$^2$ \\
+Age & Continuous & xxxxx & xx\% & xx-xx years \\
+Gravidity & Discrete & xxxxx & xx\% & 1-xx \\
+Parity & Discrete & xxxxx & xx\% & 0-xx \\
+Y-concentration & Continuous & xxxxx & xx\% & 0-xx\% \\
+Z13, Z18, Z21, ZX & Continuous & xxxxx & xx\% & -xx to +xx \\
+AB (Abnormality) & Categorical & xxxxx & - & Normal/Abnormal \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% 这里可以加入数据分布的初步统计
+\textbf{Data Filtering for Different Problems:}
+\begin{itemize}
+    \item Problems 1-3: Male fetus samples with non-null Y-concentration (N = xxxxx)
+    \item Problem 4: Female fetus samples (N = xxxxx), with abnormal cases (N = xxxxx)
+\end{itemize}
+
+\subsection{Data Cleaning}
+% 数据清洗要点：
+%   1. 展示发现问题的过程（配合可视化）
+%   2. 说明处理策略及选择理由
+%   3. 展示处理前后的对比
+
+\subsubsection{Missing Value Analysis and Treatment}
+% 缺失值处理
+
+We first identified missing value patterns using a heatmap visualization (Figure \ref{fig:missing_heatmap}).
+
+% 插入缺失值热图
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{missing_heatmap.png}
+\fbox{\parbox{0.8\textwidth}{\centering \vspace{2cm} [Figure: Missing Value Heatmap] 
+\\ The x-axis shows variable names, the y-axis shows sample indices, and yellow represents missing data. \vspace{2cm}}}
+\caption{Heatmap of Missing Values}
+\label{fig:missing_heatmap}
+\end{figure}
+
+% 说明缺失值处理策略
+Missing values were handled using the following strategies:
+\begin{itemize}
+    \item \textbf{Height/Weight:} Imputed using K-Nearest Neighbors (KNN) with $k=5$, considering the correlation between height, weight, and other maternal characteristics.
+    \item \textbf{BMI:} Calculated from height and weight after imputation: $BMI = \frac{weight(kg)}{height(m)^2}$
+    \item \textbf{Y-concentration = 0 for female fetuses:} Not treated as missing; these samples are filtered for Problems 1-3 and used in Problem 4.
+\end{itemize}
+
+\subsubsection{Outlier Detection and Correction}
+% 异常值处理
+
+We applied the Interquartile Range (IQR) method to identify outliers:
+\begin{equation}
+    IQR = Q_3 - Q_1
+\end{equation}
+\begin{equation}
+    \text{Outlier if } x < Q_1 - 1.5 \times IQR \text{ or } x > Q_3 + 1.5 \times IQR
+\end{equation}
+
+% 箱线图展示异常值
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.9\textwidth]{boxplot_outliers.png}
+\fbox{\parbox{0.9\textwidth}{\centering \vspace{2cm} [Figure: Boxplots for Key Variables] 
+\\ Box plots of variables such as BMI and Y-concentration, with outliers labeled \vspace{2cm}}}
+\caption{Boxplots for Outlier Detection in Key Variables}
+\label{fig:boxplot}
+\end{figure}
+
+Outliers were handled as follows:
+\begin{itemize}
+    \item \textbf{Physiologically impossible values} (e.g., BMI $<$ 10 or $>$ 60): Removed from analysis
+    \item \textbf{Extreme but possible values}: Winsorized to the 1st/99th percentile
+\end{itemize}
+
+\subsection{Data Transformation}
+% 数据转换
+
+\subsubsection{Gestational Age Conversion}
+% 孕周格式转换是NIPT题目的关键预处理步骤
+
+The gestational age is provided in "weeks+days" format (e.g., "12+3" means 12 weeks and 3 days). We converted it to continuous days:
+\begin{equation}
+    t_{days} = 7 \times t_{weeks} + t_{days\_remainder}
+\end{equation}
+
+For analysis purposes, we also created a continuous weeks variable:
+\begin{equation}
+    t_{weeks\_continuous} = t_{weeks} + \frac{t_{days\_remainder}}{7}
+\end{equation}
+
+\subsubsection{Z-Score Verification}
+% Z值公式验证
+
+The Z-scores for chromosomes are provided in the dataset. We verified the calculation formula:
+\begin{equation}
+    Z_i = \frac{x_i - \mu_i}{\sigma_i}
+\end{equation}
+where $x_i$ is the observed read ratio for chromosome $i$, and $\mu_i$, $\sigma_i$ are reference parameters.
+
+\subsubsection{Feature Standardization}
+% 标准化（用于机器学习模型）
+
+For machine learning models, continuous features were standardized:
+\begin{equation}
+    x_{standardized} = \frac{x - \bar{x}}{s_x}
+\end{equation}
+
+\subsection{Feature Engineering}
+% 特征工程
+
+Based on domain knowledge and exploratory analysis, we constructed the following derived features:
+
+\begin{table}[H]
+\centering
+\caption{Engineered Features}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Feature} & \textbf{Formula} & \textbf{Rationale} \\
+\midrule
+BMI & $weight / height^2$ & Body composition indicator \\
+Gestational days & $7 \times weeks + days$ & Continuous time variable \\
+Age group & Binned age categories & Non-linear age effects \\
+$t \times BMI$ & Interaction term & Capture synergistic effects \\
+BMI$^2$ & Quadratic term & Non-linear BMI effects \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Variable Selection}
+% 变量选择
+
+\subsubsection{Correlation Analysis}
+% 相关性分析
+
+We computed the Spearman correlation matrix to identify relationships between variables and detect potential multicollinearity.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{correlation_matrix.png}
+\fbox{\parbox{0.8\textwidth}{\centering \vspace{3cm} [Figure: Correlation Matrix Heatmap] 
+\\ Heatmap of Spearman correlation coefficients between variables \vspace{3cm}}}
+\caption{Correlation Matrix of Variables}
+\label{fig:correlation}
+\end{figure}
+
+% 描述相关性发现
+Key findings from correlation analysis:
+\begin{itemize}
+    \item Y-concentration shows positive correlation with gestational age ($r = $ xxxxx, $p < 0.001$)
+    \item Y-concentration shows negative correlation with BMI ($r = $ xxxxx, $p < 0.001$)
+    \item Height and weight are highly correlated ($r = $ xxxxx), justifying the use of BMI as a combined indicator
+\end{itemize}
+
+\subsubsection{Variable Importance Ranking}
+% 变量重要性排序
+
+Using Random Forest feature importance, we ranked variables by their predictive power:
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{feature_importance.png}
+\fbox{\parbox{0.8\textwidth}{\centering \vspace{2.5cm} [Figure: Feature Importance Ranking] 
+\\ Horizontal bar chart showing the importance scores of each feature \vspace{2.5cm}}}
+\caption{Feature Importance Ranking for Y-concentration Prediction}
+\label{fig:importance}
+\end{figure}
+
+% 4. PROBLEM 1: CORRELATION ANALYSIS (问题一)
+% 问题一核心任务：建立Y浓度与孕周、BMI的定量关系
+% 写作要点：
+%   1. 明确问题分析
+%   2. 探索性数据分析（EDA）配合可视化
+%   3. 模型选择与构建
+%   4. 参数估计与假设检验
+%   5. 残差分析验证模型
+%   6. 结果可视化
+%   7. 明确结论
+
+\section{Problem 1: Correlation Analysis of Y-Concentration}
+
+\subsection{Problem Analysis}
+% 明确问题的输入、输出、目标
+
+The goal of Problem 1 is to establish the quantitative relationship between Y-chromosome concentration (for male fetuses), gestational age, and maternal BMI. Specifically, we need to:
+\begin{itemize}
+    \item Determine the mathematical form of the relationship $Y = f(t, BMI)$
+    \item Assess statistical significance of all relationships
+    \item Quantify the direction and magnitude of effects
+    \item Visualize the correlation patterns
+\end{itemize}
+
+\subsection{Exploratory Data Analysis}
+% EDA是建模前的必要步骤，通过可视化发现数据规律
+
+\subsubsection{Scatter Plot Analysis}
+% 散点图观察关系形态
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.9\textwidth]{scatter_y_vs_time_bmi.png}
+\fbox{\parbox{0.9\textwidth}{\centering \vspace{3cm} [Figure: Scatter Plot of Y-concentration vs. Gestational Age] \vspace{3cm}}}
+\caption{Y-concentration vs. Gestational Age (colored by BMI groups)}
+\label{fig:scatter_y_time}
+\end{figure}
+
+\subsubsection{Distribution Analysis by Groups}
+% 箱线图比较不同组别
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{boxplot_bmi_groups.png}
+\fbox{\parbox{0.8\textwidth}{\centering \vspace{2.5cm} [Figure: Boxplots of Y-concentration by BMI Groups] \vspace{2.5cm}}}
+\caption{Y-concentration Distribution by BMI Categories}
+\label{fig:boxplot_bmi}
+\end{figure}
+
+\subsubsection{3D Visualization}
+% 3D图展示三变量关系
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{3d_scatter.png}
+\fbox{\parbox{0.8\textwidth}{\centering \vspace{3cm} [Figure: 3D Scatter Plot]  \vspace{3cm}}}
+\caption{3D Visualization of Y-concentration as a Function of Gestational Age and BMI}
+\label{fig:3d}
+\end{figure}
+
+\subsection{Model Construction}
+% 模型构建要点：
+%   1. 说明模型选择理由
+%   2. 给出数学形式
+%   3. 说明参数估计方法
+%   4. 可以考虑对比多个模型
+
+\subsubsection{Model Selection Rationale}
+Based on exploratory analysis showing approximately linear trends with potential interaction effects, we consider the following candidate models:
+
+\textbf{Model 1: Simple Additive Model}
+\begin{equation}
+    Y = \beta_0 + \beta_1 t + \beta_2 BMI + \epsilon
+\end{equation}
+
+\textbf{Model 2: Model with Interaction Term}
+\begin{equation}
+    Y = \beta_0 + \beta_1 t + \beta_2 BMI + \beta_3 (t \times BMI) + \epsilon
+\end{equation}
+
+\textbf{Model 3: Polynomial Model}
+\begin{equation}
+    Y = \beta_0 + \beta_1 t + \beta_2 t^2 + \beta_3 BMI + \beta_4 BMI^2 + \epsilon
+\end{equation}
+
+where $\epsilon \sim N(0, \sigma^2)$ represents the random error term.
+
+\subsubsection{Parameter Estimation}
+% 使用OLS估计参数
+
+We employed Ordinary Least Squares (OLS) to estimate the parameters, minimizing:
+\begin{equation}
+    \hat{\boldsymbol{\beta}} = \arg\min_{\boldsymbol{\beta}} \sum_{i=1}^{n} (Y_i - \mathbf{X}_i^T \boldsymbol{\beta})^2
+\end{equation}
+
+The closed-form solution is:
+\begin{equation}
+    \hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}
+\end{equation}
+
+\subsection{Results and Statistical Testing}
+% 展示结果，进行统计检验
+
+\subsubsection{Coefficient Estimates}
+% 回归系数表
+
+\begin{table}[H]
+\centering
+\caption{Regression Results (Model 2 with Interaction)}
+\label{tab:regression}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Variable} & \textbf{Coefficient} & \textbf{Std. Error} & \textbf{t-statistic} & \textbf{p-value} \\
+\midrule
+Intercept ($\beta_0$) & xxxxx & xxxxx & xxxxx & xxxxx \\
+Gestational Age ($\beta_1$) & xxxxx & xxxxx & xxxxx & $<0.001$*** \\
+BMI ($\beta_2$) & xxxxx & xxxxx & xxxxx & xxxxx \\
+$t \times BMI$ ($\beta_3$) & xxxxx & xxxxx & xxxxx & xxxxx \\
+\midrule
+\multicolumn{5}{l}{$R^2 = $ xxxxx, Adjusted $R^2 = $ xxxxx, $F = $ xxxxx, $p < 0.001$} \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize *$p<0.05$, **$p<0.01$, ***$p<0.001$}
+\end{tabular}
+\end{table}
+
+\subsubsection{Model Comparison}
+% 模型比较
+
+\begin{table}[H]
+\centering
+\caption{Model Comparison}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Model} & \textbf{$R^2$} & \textbf{Adj. $R^2$} & \textbf{AIC} & \textbf{BIC} \\
+\midrule
+Model 1 (Additive) & xxxxx & xxxxx & xxxxx & xxxxx \\
+Model 2 (Interaction) & xxxxx & xxxxx & xxxxx & xxxxx \\
+Model 3 (Polynomial) & xxxxx & xxxxx & xxxxx & xxxxx \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Based on AIC/BIC criteria and interpretability, Model 2 is selected as the final model.
+
+\subsubsection{Statistical Significance Tests}
+% 假设检验
+
+\textbf{Individual Coefficient Tests (t-tests):}
+\begin{itemize}
+    \item $H_0: \beta_1 = 0$ (no effect of gestational age) — Rejected, $p < 0.001$
+    \item $H_0: \beta_2 = 0$ (no effect of BMI) — Rejected/Not rejected, $p = $ xxxxx
+    \item $H_0: \beta_3 = 0$ (no interaction effect) — xxxxx
+\end{itemize}
+
+\textbf{Overall Model Significance (F-test):}
+\begin{equation}
+    F = \frac{MSR}{MSE} = \frac{SSR/k}{SSE/(n-k-1)} = \text{xxxxx}
+\end{equation}
+with $p < 0.001$, indicating the model is statistically significant.
+
+\subsubsection{Residual Analysis}
+% 残差分析验证模型假设
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.9\textwidth]{residual_analysis.png}
+\fbox{\parbox{0.9\textwidth}{\centering \vspace{3cm} [Figure: Residual Diagnostic Plots]  \vspace{3cm}}}
+\caption{Residual Diagnostic Plots}
+\label{fig:residual}
+\end{figure}
+
+Residual analysis confirms:
+\begin{itemize}
+    \item Homoscedasticity: Residual variance appears constant across fitted values
+    \item Normality: Q-Q plot shows approximate normality
+    \item Independence: No obvious patterns in residual plots
+\end{itemize}
+
+\subsection{Results Interpretation and Visualization}
+% 结果解释与可视化
+
+\subsubsection{Effect Interpretation}
+% 解释系数的实际意义
+
+Based on Model 2, we interpret the effects:
+\begin{itemize}
+    \item \textbf{Gestational Age Effect:} For a woman with average BMI, each additional week of gestation is associated with approximately xxxxx percentage point increase in Y-concentration.
+    \item \textbf{BMI Effect:} At a fixed gestational age, each unit increase in BMI is associated with xxxxx percentage point change in Y-concentration.
+    \item \textbf{Interaction Effect:} The interaction term indicates that xxxxx.
+\end{itemize}
+
+\subsubsection{Prediction Surface Visualization}
+% 预测曲面图
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{prediction_surface.png}
+\fbox{\parbox{0.8\textwidth}{\centering \vspace{3cm} [Figure: 3D Prediction Surface]  \vspace{3cm}}}
+\caption{Predicted Y-concentration Surface}
+\label{fig:surface}
+\end{figure}
+
+\subsection{Conclusions for Problem 1}
+% 问题一结论：明确回答问题，给出量化结论
+
+Based on our comprehensive analysis, we conclude:
+
+\begin{enumerate}
+    \item \textbf{Y-concentration increases with gestational age:} The positive coefficient $\beta_1 = $ xxxxx ($p < 0.001$) indicates that Y-concentration increases by approximately xxxxx\% per week, reflecting the natural increase in fetal fraction as pregnancy progresses.
+    
+    \item \textbf{Higher BMI is associated with lower Y-concentration:} The negative coefficient $\beta_2 = $ xxxxx ($p = $ xxxxx) suggests that women with higher BMI have lower Y-concentration, likely due to dilution effects from increased maternal plasma volume.
+    
+    \item \textbf{The interaction between gestational age and BMI is statistically significant/insignificant:} xxxxx
+    
+    \item \textbf{Model Performance:} The final model explains xxxxx\% of the variance in Y-concentration ($R^2 = $ xxxxx), with all included predictors statistically significant.
+\end{enumerate}
+
+% 5. PROBLEM 2: BMI-STRATIFIED OPTIMIZATION (问题二)
+% 问题二核心任务：BMI分组+最佳检测时间确定
+% 写作要点：
+%   1. 定义达标函数和优化目标
+%   2. 提出分组策略
+%   3. 使用生存分析确定最佳时间
+%   4. 分析误差影响
+
+\section{Problem 2: BMI-Stratified Detection Timing Optimization}
+
+\subsection{Problem Analysis}
+% 问题分析
+
+The objective of Problem 2 is to:
+\begin{enumerate}
+    \item Develop an optimal BMI grouping strategy
+    \item Determine the earliest reliable detection time for each BMI group
+    \item Analyze the impact of measurement errors on the recommendations
+\end{enumerate}
+
+\subsection{Key Definitions}
+% 关键定义
+
+\subsubsection{Compliance Function}
+We define the compliance function as:
+\begin{equation}
+    D(t) = \mathbb{I}(Y(t) \geq 4\%)
+\end{equation}
+where $\mathbb{I}(\cdot)$ is the indicator function. A sample is "compliant" at time $t$ if its Y-concentration reaches or exceeds 4\%.
+
+\subsubsection{Compliance Probability}
+The compliance probability at gestational age $t$ is:
+\begin{equation}
+    P_c(t) = P(Y(t) \geq 4\%) = 1 - F_Y(4\% | t)
+\end{equation}
+where $F_Y$ is the cumulative distribution function of Y-concentration.
+
+\subsubsection{Optimal Detection Time}
+We define the optimal detection time $T^*$ as the earliest time achieving a target compliance probability $\alpha$:
+\begin{equation}
+    T^* = \min\{t : P_c(t) \geq \alpha\}
+\end{equation}
+In clinical practice, we typically set $\alpha = 0.95$ (95\% compliance).
+
+\subsection{BMI Grouping Strategies}
+% 分组策略
+
+We evaluated three grouping strategies:
+
+\subsubsection{Method A: Clinical BMI Categories}
+Based on WHO/Chinese BMI classification:
+\begin{itemize}
+    \item Group 1: BMI $< 18.5$ (Underweight)
+    \item Group 2: $18.5 \leq$ BMI $< 24$ (Normal weight)
+    \item Group 3: $24 \leq$ BMI $< 28$ (Overweight)
+    \item Group 4: BMI $\geq 28$ (Obese)
+\end{itemize}
+
+\subsubsection{Method B: Data-Driven Clustering}
+K-means clustering with optimal $K$ determined by:
+\begin{itemize}
+    \item Elbow method
+    \item Silhouette score
+    \item Gap statistic
+\end{itemize}
+
+\subsubsection{Method C: Decision Tree Splitting}
+Using CART algorithm to find optimal split points minimizing within-group variance of compliance times.
+
+\subsection{Survival Analysis Framework}
+% 生存分析框架
+
+We treat "achieving 4\% Y-concentration" as the event of interest and apply survival analysis techniques.
+
+\subsubsection{Kaplan-Meier Estimation}
+The survival function $S(t) = P(T > t)$ represents the probability of NOT achieving compliance by time $t$. Thus:
+\begin{equation}
+    P_c(t) = 1 - S(t)
+\end{equation}
+
+The Kaplan-Meier estimator:
+\begin{equation}
+    \hat{S}(t) = \prod_{t_i \leq t} \left(1 - \frac{d_i}{n_i}\right)
+\end{equation}
+where $d_i$ is the number of events at time $t_i$ and $n_i$ is the number at risk.
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.9\textwidth]{km_curves.png}
+\fbox{\parbox{0.9\textwidth}{\centering \vspace{3.5cm} [Figure: Kaplan-Meier Curves by BMI Group]  \vspace{3.5cm}}}
+\caption{Kaplan-Meier Survival Curves for Compliance by BMI Groups}
+\label{fig:km}
+\end{figure}
+
+\subsubsection{Log-Rank Test}
+We compared survival curves between BMI groups using the log-rank test:
+\begin{equation}
+    \chi^2 = \frac{\left(\sum_j (O_j - E_j)\right)^2}{\sum_j V_j}
+\end{equation}
+
+Result: $\chi^2 = $ xxxxx, $df = $ xxx, $p = $ xxxxx, indicating significant/non-significant differences between groups.
+
+\subsection{Optimal Timing Determination}
+% 最佳时间确定
+
+\begin{table}[H]
+\centering
+\caption{Recommended Detection Timing by BMI Group}
+\label{tab:timing}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{BMI Group} & \textbf{N} & \textbf{Optimal Week} & \textbf{95\% Compliance Rate} & \textbf{95\% CI} \\
+\midrule
+Underweight ($<18.5$) & xxxxx & xx weeks & xx.x\% & [xx.x, xx.x] \\
+Normal ($18.5-24$) & xxxxx & xx weeks & xx.x\% & [xx.x, xx.x] \\
+Overweight ($24-28$) & xxxxx & xx weeks & xx.x\% & [xx.x, xx.x] \\
+Obese ($\geq 28$) & xxxxx & xx weeks & xx.x\% & [xx.x, xx.x] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Measurement Error Impact Analysis}
+% 误差影响分析
+
+\subsubsection{Monte Carlo Simulation}
+We assessed the robustness of recommendations under measurement error by:
+\begin{equation}
+    Y_{observed} = Y_{true} + \epsilon, \quad \epsilon \sim N(0, \sigma^2)
+\end{equation}
+
+For each error level $\sigma \in \{0.5\%, 1.0\%, 1.5\%, 2.0\%\}$, we:
+\begin{enumerate}
+    \item Generated 1000 perturbed datasets
+    \item Recalculated optimal timing for each
+    \item Computed the distribution of recommended times
+\end{enumerate}
+
+\subsubsection{Sensitivity Results}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{error_sensitivity.png}
+\fbox{\parbox{0.8\textwidth}{\centering \vspace{3cm} [Figure: Sensitivity to Measurement Error]  \vspace{3cm}}}
+\caption{Impact of Measurement Error on Recommended Detection Timing}
+\label{fig:error}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Timing Recommendation Stability Under Measurement Error}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Error Level} & \textbf{Mean Change (days)} & \textbf{Std Dev} & \textbf{Max Change} \\
+\midrule
+$\sigma = 0.5\%$ & xxxxx & xxxxx & xxxxx \\
+$\sigma = 1.0\%$ & xxxxx & xxxxx & xxxxx \\
+$\sigma = 2.0\%$ & xxxxx & xxxxx & xxxxx \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Conclusions for Problem 2}
+% 问题二结论
+
+\begin{enumerate}
+    \item \textbf{Optimal BMI Grouping:} The clinical 4-group classification provides meaningful stratification with significantly different optimal timing across groups (log-rank $p = $ xxxxx).
+    
+    \item \textbf{Recommended Timing:}
+    \begin{itemize}
+        \item Underweight women can achieve reliable results as early as week xxx
+        \item Obese women should wait until week xxx for optimal reliability
+    \end{itemize}
+    
+    \item \textbf{Error Robustness:} Recommendations are robust to measurement errors up to xxxxx\%, with timing changes within xxxxx days.
+\end{enumerate}
+
+% 6. PROBLEM 3: MULTI-FACTOR ANALYSIS (问题三)
+
+\section{Problem 3: Multi-Factor Comprehensive Analysis}
+
+\subsection{Problem Analysis}
+% 问题分析
+
+Building on Problem 2, we extend the analysis to incorporate additional maternal factors:
+\begin{itemize}
+    \item Height and Weight (or BMI as combined indicator)
+    \item Maternal Age
+    \item Gravidity (number of pregnancies)
+    \item Parity (number of live births)
+\end{itemize}
+
+\subsection{Feature Selection}
+% 特征选择
+
+\subsubsection{LASSO Regularization}
+We applied LASSO to identify significant predictors:
+\begin{equation}
+    \hat{\boldsymbol{\beta}} = \arg\min_{\boldsymbol{\beta}} \left\{ \sum_{i=1}^{n} (y_i - \mathbf{x}_i^T\boldsymbol{\beta})^2 + \lambda \|\boldsymbol{\beta}\|_1 \right\}
+\end{equation}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{lasso_path.png}
+\fbox{\parbox{0.8\textwidth}{\centering \vspace{2.5cm} [Figure: LASSO Coefficient Paths] \vspace{2.5cm}}}
+\caption{LASSO Regularization Paths}
+\label{fig:lasso}
+\end{figure}
+
+\subsection{Cox Proportional Hazards Model}
+% Cox模型
+
+\subsubsection{Model Formulation}
+The Cox proportional hazards model estimates the hazard of achieving compliance:
+\begin{equation}
+    h(t|\mathbf{X}) = h_0(t) \exp(\beta_1 BMI + \beta_2 Age + \beta_3 G + \beta_4 P)
+\end{equation}
+
+\subsubsection{Model Results}
+
+\begin{table}[H]
+\centering
+\caption{Cox Proportional Hazards Model Results}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Variable} & \textbf{Hazard Ratio} & \textbf{95\% CI} & \textbf{z-value} & \textbf{p-value} \\
+\midrule
+BMI (per unit) & xxxxx & [xx, xx] & xxxxx & xxxxx \\
+Age (per year) & xxxxx & [xx, xx] & xxxxx & xxxxx \\
+Gravidity & xxxxx & [xx, xx] & xxxxx & xxxxx \\
+Parity & xxxxx & [xx, xx] & xxxxx & xxxxx \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Risk Score and Personalized Timing}
+% 风险评分和个性化时间
+
+Based on the Cox model, we construct a prognostic index:
+\begin{equation}
+    PI = \hat{\beta}_1 \cdot BMI + \hat{\beta}_2 \cdot Age + \hat{\beta}_3 \cdot G + \hat{\beta}_4 \cdot P
+\end{equation}
+
+Patients are stratified into risk groups based on PI percentiles:
+\begin{itemize}
+    \item Low risk ($PI < P_{33}$): Earlier detection feasible
+    \item Medium risk ($P_{33} \leq PI < P_{67}$): Standard timing
+    \item High risk ($PI \geq P_{67}$): Later detection recommended
+\end{itemize}
+
+\subsection{Conclusions for Problem 3}
+% 问题三结论
+
+\begin{enumerate}
+    \item Beyond BMI, xxxxx are identified as significant predictors.
+    \item The multi-factor model improves prediction compared to BMI alone.
+    \item A personalized risk score enables individualized timing recommendations.
+\end{enumerate}
+
+% 7. PROBLEM 4: ABNORMALITY DETECTION (问题四)
+
+\section{Problem 4: Female Fetus Abnormality Detection}
+
+\subsection{Problem Analysis}
+% 问题分析
+
+For female fetuses where Y-concentration is not applicable, we develop a classification model to detect chromosomal abnormalities using Z-scores and other features.
+
+\subsection{Data Preparation}
+% 数据准备
+
+\subsubsection{Label Definition}
+\begin{equation}
+    y = \begin{cases}
+        1 & \text{if AB column is non-empty (abnormal)} \\
+        0 & \text{otherwise (normal)}
+    \end{cases}
+\end{equation}
+
+Class distribution: Normal = xxxxx, Abnormal = xxxxx (imbalance ratio xxxxx:1)
+
+\subsubsection{Feature Set}
+\begin{table}[H]
+\centering
+\caption{Features for Classification}
+\begin{tabular}{l l}
+\toprule
+\textbf{Category} & \textbf{Features} \\
+\midrule
+Z-scores & $Z_{13}, Z_{18}, Z_{21}, Z_X$ \\
+Maternal & BMI, Age, Gestational Age \\
+Sequencing & GC content, Read counts \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Model Construction}
+% 模型构建
+
+\subsubsection{Handling Class Imbalance}
+\begin{itemize}
+    \item SMOTE oversampling
+    \item Class weight adjustment
+    \item Threshold optimization
+\end{itemize}
+
+\subsubsection{Model Comparison}
+We compared Logistic Regression, Random Forest, and XGBoost.
+
+\subsection{Model Evaluation}
+% 模型评估
+
+\begin{table}[H]
+\centering
+\caption{Classification Performance Comparison}
+\begin{tabular}{l c c c c c}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1} & \textbf{AUC} \\
+\midrule
+Logistic Regression & xxxxx & xxxxx & xxxxx & xxxxx & xxxxx \\
+Random Forest & xxxxx & xxxxx & xxxxx & xxxxx & xxxxx \\
+XGBoost & xxxxx & xxxxx & xxxxx & xxxxx & xxxxx \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.7\textwidth]{roc_curves.png}
+\fbox{\parbox{0.7\textwidth}{\centering \vspace{3cm} [Figure: ROC Curves] \vspace{3cm}}}
+\caption{ROC Curves for Different Classification Models}
+\label{fig:roc}
+\end{figure}
+
+\subsection{Feature Importance and Detection Rules}
+% 特征重要性和检测规则
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.7\textwidth]{feature_importance_q4.png}
+\fbox{\parbox{0.7\textwidth}{\centering \vspace{2.5cm} [Figure: Feature Importance] \vspace{2.5cm}}}
+\caption{Feature Importance for Abnormality Detection}
+\end{figure}
+
+\textbf{Proposed Detection Rules:}
+\begin{itemize}
+    \item If $|Z_{21}| > $ xxxxx OR $|Z_{18}| > $ xxxxx OR $|Z_{13}| > $ xxxxx: High risk
+    \item If model probability $>$ xxxxx: Recommend diagnostic testing
+\end{itemize}
+
+\subsection{Conclusions for Problem 4}
+% 问题四结论
+
+\begin{enumerate}
+    \item The xxxxx model achieves best performance with AUC = xxxxx.
+    \item Z-scores (especially $Z_{21}$) are the most important predictors.
+    \item The proposed rules achieve xxxxx\% sensitivity and xxxxx\% specificity.
+\end{enumerate}
+
+% 8. MODEL VALIDATION (模型验证)
+
+\section{Model Validation and Evaluation}
+
+\subsection{Cross-Validation Results}
+% 交叉验证
+
+\begin{table}[H]
+\centering
+\caption{5-Fold Cross-Validation Results}
+\begin{tabular}{l c c c c c c}
+\toprule
+\textbf{Problem} & \textbf{Fold 1} & \textbf{Fold 2} & \textbf{Fold 3} & \textbf{Fold 4} & \textbf{Fold 5} & \textbf{Mean $\pm$ Std} \\
+\midrule
+P1 ($R^2$) & xxxxx & xxxxx & xxxxx & xxxxx & xxxxx & xxxxx $\pm$ xxxxx \\
+P4 (AUC) & xxxxx & xxxxx & xxxxx & xxxxx & xxxxx & xxxxx $\pm$ xxxxx \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Subgroup Validation}
+% 子组验证
+
+Models were validated across different subgroups (by age, BMI category) with consistent performance.
+
+% 9. SENSITIVITY ANALYSIS (敏感性分析)
+
+\section{Sensitivity Analysis}
+
+\subsection{Parameter Sensitivity}
+% 参数敏感性
+
+We analyzed model sensitivity to key parameters and hyperparameters.
+
+\subsection{Data Perturbation}
+% 数据扰动
+
+Bootstrap resampling (1000 iterations) confirmed model stability.
+
+% 10. STRENGTHS AND WEAKNESSES (优缺点)
+
+\section{Strengths and Weaknesses}
+
+\subsection{Strengths}
+% 优点要具体
+
+\begin{enumerate}
+    \item \textbf{Comprehensive Framework:} Unified methodology across all four problems.
+    \item \textbf{Clinical Applicability:} Directly actionable recommendations.
+    \item \textbf{Robust Validation:} Extensive cross-validation and sensitivity analysis.
+    \item \textbf{Interpretability:} Models provide understandable insights for clinicians.
+\end{enumerate}
+
+\subsection{Weaknesses}
+% 缺点要诚实
+
+\begin{enumerate}
+    \item \textbf{Data Limitations:} Single-center data; external validation needed.
+    \item \textbf{Linear Assumptions:} May miss complex non-linear patterns.
+    \item \textbf{Class Imbalance:} Abnormality detection affected by rare events.
+\end{enumerate}
+
+% 11. CONCLUSIONS (结论)
+
+\section{Conclusions}
+
+This study develops a comprehensive framework for optimizing NIPT detection timing and abnormality detection. Key contributions include:
+
+\begin{enumerate}
+    \item A quantitative model for Y-concentration dynamics achieving $R^2 = $ xxxxx
+    \item BMI-stratified timing recommendations with $>$95\% compliance rates
+    \item Multi-factor personalized risk scoring system
+    \item Machine learning-based abnormality detection with AUC = xxxxx
+\end{enumerate}
+
+% REFERENCES (参考文献)
+
+\begin{thebibliography}{99}
+
+\bibitem{ref1} Lo, Y.M.D., et al. "Presence of fetal DNA in maternal plasma and serum." \textit{The Lancet} 350.9076 (1997): 485-487.
+
+\bibitem{ref2} Norton, M.E., et al. "Cell-free DNA analysis for noninvasive examination of trisomy." \textit{NEJM} 372.17 (2015): 1589-1597.
+
+\bibitem{ref3} Ashoor, G., et al. "Fetal fraction in maternal plasma cell-free DNA." \textit{Ultrasound Obstet Gynecol} 41.1 (2013): 26-32.
+
+\bibitem{ref4} Cox, D.R. "Regression models and life-tables." \textit{JRSS-B} 34.2 (1972): 187-202.
+
+\bibitem{ref5} Chen, T., Guestrin, C. "XGBoost: A scalable tree boosting system." \textit{KDD} 2016.
+
+\bibitem{ref6} Breiman, L. "Random forests." \textit{Machine Learning} 45.1 (2001): 5-32.
+
+% 添加更多相关参考文献...
+
+\end{thebibliography}
+
+% APPENDIX (附录)
+
+\appendix
+
+\section{Supplementary Figures}
+% 补充图表
+
+\section{Code Implementation}
+% 关键代码
+
+\begin{lstlisting}[language=Python, caption=Example Code for Data Preprocessing]
+import pandas as pd
+import numpy as np
+from sklearn.impute import KNNImputer
+
+# Load data
+data = pd.read_excel('nipt_data.xlsx')
+
+# Convert gestational age
+def convert_ga(ga_str):
+    weeks, days = map(int, ga_str.split('+'))
+    return weeks * 7 + days
+
+data['ga_days'] = data['gestational_age'].apply(convert_ga)
+
+# KNN imputation for missing values
+imputer = KNNImputer(n_neighbors=5)
+data_imputed = imputer.fit_transform(data[numeric_cols])
+\end{lstlisting}
+
+\end{document}
